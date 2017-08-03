@@ -1,4 +1,4 @@
-import { allocate, deallocate } from '../../src/module';
+import { allocate, connect, deallocate, disconnect } from '../../src/module';
 
 describe('module', () => {
 
@@ -13,6 +13,22 @@ describe('module', () => {
 
     });
 
+    describe('connect()', () => {
+
+        let port;
+
+        beforeEach(() => {
+            const messageChannel = new MessageChannel();
+
+            port = messageChannel.port1;
+        });
+
+        it('should connect a port', () => {
+            return connect(port);
+        });
+
+    });
+
     describe('deallocate()', () => {
 
         let arrayBuffer;
@@ -23,6 +39,22 @@ describe('module', () => {
 
         it('should deallocate an ArrayBuffer', () => {
             return deallocate(arrayBuffer);
+        });
+
+    });
+
+    describe('disconnect()', () => {
+
+        let port;
+
+        beforeEach(() => {
+            const messageChannel = new MessageChannel();
+
+            port = messageChannel.port1;
+        });
+
+        it('should disconnect a port', () => {
+            return disconnect(port);
         });
 
     });
