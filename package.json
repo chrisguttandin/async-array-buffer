@@ -5,7 +5,7 @@
   },
   "dependencies": {
     "async-array-buffer-broker": "^1.2.1",
-    "async-array-buffer-worker": "^2.1.0"
+    "async-array-buffer-worker": "^2.1.1"
   },
   "description": "This module allows to allocate and deallocate ArrayBuffers without blocking the main thread.",
   "devDependencies": {
