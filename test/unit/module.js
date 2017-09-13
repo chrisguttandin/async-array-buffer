@@ -1,4 +1,4 @@
-import { allocate, connect, deallocate, disconnect } from '../../src/module';
+import { allocate, connect, deallocate, disconnect } from '../../src/module';
 
 describe('module', () => {
 
