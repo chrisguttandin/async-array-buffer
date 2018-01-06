@@ -15,16 +15,11 @@ describe('module', () => {
 
     describe('connect()', () => {
 
-        let port;
-
-        beforeEach(() => {
-            const messageChannel = new MessageChannel();
-
-            port = messageChannel.port1;
-        });
-
         it('should connect a port', () => {
-            return connect(port);
+            return connect()
+                .then((port) => {
+                    expect(port).to.be.an.instanceOf(MessagePort);
+                });
         });
 
     });
@@ -47,11 +42,8 @@ describe('module', () => {
 
         let port;
 
-        beforeEach(() => {
-            const messageChannel = new MessageChannel();
-
-            port = messageChannel.port1;
-        });
+        beforeEach(() => connect()
+            .then((prt) => port = prt));
 
         it('should disconnect a port', () => {
             return disconnect(port);
