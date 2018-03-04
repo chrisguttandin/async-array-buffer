@@ -3,6 +3,11 @@
   "bugs": {
     "url": "https://github.com/chrisguttandin/async-array-buffer/issues"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "dependencies": {
     "async-array-buffer-broker": "^2.0.14",
     "async-array-buffer-worker": "^3.0.12",
@@ -52,8 +57,8 @@
     "webpack": "^4.1.0"
   },
   "files": [
-    "build/es5/",
     "build/es2015/",
+    "build/es5/",
     "build/esm/",
     "src/"
   ],
