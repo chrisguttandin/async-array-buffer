@@ -14,3 +14,5 @@ export const connect = asyncArrayBuffer.connect;
 export const deallocate = asyncArrayBuffer.deallocate;
 
 export const disconnect = asyncArrayBuffer.disconnect;
+
+URL.revokeObjectURL(url);
