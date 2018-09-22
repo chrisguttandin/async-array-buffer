@@ -15,4 +15,6 @@ export const deallocate = asyncArrayBuffer.deallocate;
 
 export const disconnect = asyncArrayBuffer.disconnect;
 
+export const isSupported = asyncArrayBuffer.isSupported;
+
 URL.revokeObjectURL(url);

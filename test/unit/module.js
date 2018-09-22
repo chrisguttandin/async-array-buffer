@@ -1,4 +1,4 @@
-import { allocate, connect, deallocate, disconnect } from '../../src/module';
+import { allocate, connect, deallocate, disconnect, isSupported } from '../../src/module';
 
 describe('module', () => {
 
@@ -47,6 +47,14 @@ describe('module', () => {
 
         it('should disconnect a port', () => {
             return disconnect(port);
+        });
+
+    });
+
+    describe('isSupported()', () => {
+
+        it('should check the browser support', () => {
+            return isSupported();
         });
 
     });
