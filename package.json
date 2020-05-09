@@ -12,7 +12,7 @@
     "@babel/runtime": "^7.9.6",
     "async-array-buffer-broker": "^4.0.8",
     "async-array-buffer-worker": "^6.0.8",
-    "tslib": "^1.11.1"
+    "tslib": "^1.11.2"
   },
   "description": "This module allows to allocate and deallocate ArrayBuffers without blocking the main thread.",
   "devDependencies": {
