@@ -9,7 +9,7 @@
         }
     },
     "dependencies": {
-        "@babel/runtime": "^7.23.2",
+        "@babel/runtime": "^7.23.4",
         "async-array-buffer-broker": "^4.0.76",
         "async-array-buffer-worker": "^6.0.76",
         "tslib": "^2.6.2"
