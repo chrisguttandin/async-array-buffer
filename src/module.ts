@@ -1,20 +1,15 @@
 import { load } from 'async-array-buffer-broker';
+import { createLoadOrReturnBroker } from './factories/load-or-return-broker';
 import { worker } from './worker/worker';
 
-const blob: Blob = new Blob([worker], { type: 'application/javascript; charset=utf-8' });
+const loadOrReturnBroker = createLoadOrReturnBroker(load, worker);
 
-const url: string = URL.createObjectURL(blob);
+export const allocate: ReturnType<typeof load>['allocate'] = (length) => loadOrReturnBroker().allocate(length);
 
-const asyncArrayBuffer = load(url);
+export const connect: ReturnType<typeof load>['connect'] = () => loadOrReturnBroker().connect();
 
-export const allocate = asyncArrayBuffer.allocate;
+export const deallocate: ReturnType<typeof load>['deallocate'] = (arrayBuffer) => loadOrReturnBroker().deallocate(arrayBuffer);
 
-export const connect = asyncArrayBuffer.connect;
+export const disconnect: ReturnType<typeof load>['disconnect'] = (port) => loadOrReturnBroker().disconnect(port);
 
-export const deallocate = asyncArrayBuffer.deallocate;
-
-export const disconnect = asyncArrayBuffer.disconnect;
-
-export const isSupported = asyncArrayBuffer.isSupported;
-
-URL.revokeObjectURL(url);
+export const isSupported: ReturnType<typeof load>['isSupported'] = () => loadOrReturnBroker().isSupported();
