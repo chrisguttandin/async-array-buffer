@@ -25,13 +25,13 @@ module.exports = (config) => {
                 served: false,
                 watched: true
             },
-            'test/unit/**/*.js'
+            'test/integration/**/*.js'
         ],
 
         frameworks: ['mocha', 'sinon-chai'],
 
         preprocessors: {
-            'test/unit/**/*.js': 'webpack'
+            'test/integration/**/*.js': 'webpack'
         },
 
         reporters: ['dots'],
@@ -78,10 +78,10 @@ module.exports = (config) => {
                 env.TARGET === 'chrome'
                     ? ['ChromeSauceLabs']
                     : env.TARGET === 'firefox'
-                    ? ['FirefoxSauceLabs']
-                    : env.TARGET === 'safari'
-                    ? ['SafariSauceLabs']
-                    : ['ChromeSauceLabs', 'FirefoxSauceLabs', 'SafariSauceLabs'],
+                      ? ['FirefoxSauceLabs']
+                      : env.TARGET === 'safari'
+                        ? ['SafariSauceLabs']
+                        : ['ChromeSauceLabs', 'FirefoxSauceLabs', 'SafariSauceLabs'],
 
             captureTimeout: 300000,
 

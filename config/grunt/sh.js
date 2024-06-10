@@ -14,8 +14,11 @@ module.exports = (grunt) => {
         'lint-test': {
             cmd: 'npm run lint:test'
         },
-        'test-unit': {
-            cmd: `karma start config/karma/config-unit.js ${continuous ? '--concurrency Infinity' : '--single-run'}`
+        'test-integration-browser': {
+            cmd: `karma start config/karma/config-integration.js ${continuous ? '--concurrency Infinity' : '--single-run'}`
+        },
+        'test-integration-node': {
+            cmd: 'mocha --bail --parallel --recursive --require config/mocha/config-integration.js test/integration'
         }
     };
 };
